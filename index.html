@@ -1,0 +1,1217 @@
+```
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fusion Morocco — Loyalty Programs for Morocco's Best Brands | Programme Fidélité Maroc | برنامج الولاء بالمغرب</title>
+<meta name="description" content="Fusion Morocco builds custom loyalty programs for Moroccan restaurants, cafés and retail brands. Programme fidélité sur mesure au Maroc. برامج الولاء للعلامات التجارية المغربية. Based in Rabat.">
+<meta name="keywords" content="loyalty program Morocco, loyalty app Rabat, programme fidélité Maroc, برنامج ولاء المغرب, customer retention Morocco, Fusion Morocco">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&family=Noto+Sans+Arabic:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+–gold: #C9A84C;
+–gold-light: #E8C96A;
+–gold-pale: #F5E9C8;
+–ink: #0D0D0D;
+–ink-soft: #1A1A1A;
+–warm-white: #FAF7F2;
+–muted: #888;
+–border: rgba(201,168,76,0.2);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+font-family: ‘DM Sans’, sans-serif;
+background: var(–ink);
+color: var(–warm-white);
+overflow-x: hidden;
+}
+
+/* Arabic font override */
+html[lang=“ar”] body,
+html[lang=“ar”] h1,
+html[lang=“ar”] h2,
+html[lang=“ar”] h3,
+html[lang=“ar”] p,
+html[lang=“ar”] a,
+html[lang=“ar”] button,
+html[lang=“ar”] label,
+html[lang=“ar”] input,
+html[lang=“ar”] textarea,
+html[lang=“ar”] select,
+html[lang=“ar”] span {
+font-family: ‘Noto Sans Arabic’, sans-serif;
+}
+
+/* Language visibility */
+[data-lang] { display: none; }
+html[lang=“en”] [data-lang=“en”] { display: block; }
+html[lang=“fr”] [data-lang=“fr”] { display: block; }
+html[lang=“ar”] [data-lang=“ar”] { display: block; }
+html[lang=“en”] [data-lang=“en”].inline,
+html[lang=“fr”] [data-lang=“fr”].inline,
+html[lang=“ar”] [data-lang=“ar”].inline { display: inline; }
+html[lang=“en”] [data-lang=“en”].flex,
+html[lang=“fr”] [data-lang=“fr”].flex,
+html[lang=“ar”] [data-lang=“ar”].flex { display: flex; }
+
+/* ── NAV ── */
+nav {
+position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+display: flex; justify-content: space-between; align-items: center;
+padding: 1.4rem 6%;
+background: rgba(13,13,13,0.9);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid var(–border);
+gap: 1rem;
+}
+
+.nav-logo {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.3rem;
+font-weight: 700;
+letter-spacing: 0.04em;
+color: var(–gold);
+text-decoration: none;
+white-space: nowrap;
+}
+.nav-logo span { color: var(–warm-white); }
+
+nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
+nav ul a {
+text-decoration: none;
+color: var(–warm-white);
+font-size: 0.82rem;
+font-weight: 500;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+opacity: 0.7;
+transition: opacity 0.2s, color 0.2s;
+white-space: nowrap;
+}
+nav ul a:hover { opacity: 1; color: var(–gold); }
+
+.nav-cta {
+background: var(–gold) !important;
+color: var(–ink) !important;
+padding: 0.55rem 1.3rem;
+border-radius: 2px;
+opacity: 1 !important;
+font-weight: 500 !important;
+transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(–gold-light) !important; }
+
+/* Language switcher */
+.lang-switcher {
+display: flex;
+gap: 0.3rem;
+flex-shrink: 0;
+}
+.lang-btn {
+background: transparent;
+border: 1px solid var(–border);
+color: var(–muted);
+padding: 0.35rem 0.7rem;
+font-size: 0.7rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+cursor: pointer;
+transition: all 0.2s;
+font-family: ‘DM Sans’, sans-serif;
+}
+.lang-btn:hover { border-color: var(–gold); color: var(–gold); }
+.lang-btn.active { background: var(–gold); color: var(–ink); border-color: var(–gold); font-weight: 600; }
+
+/* ── HERO ── */
+#hero {
+min-height: 100vh;
+display: flex; align-items: center;
+padding: 10rem 6% 6rem;
+position: relative;
+overflow: hidden;
+}
+
+.hero-bg {
+position: absolute; inset: 0;
+background:
+radial-gradient(ellipse 60% 50% at 80% 40%, rgba(201,168,76,0.12) 0%, transparent 70%),
+radial-gradient(ellipse 40% 60% at 10% 70%, rgba(201,168,76,0.06) 0%, transparent 60%);
+}
+
+.hero-grid {
+position: absolute; inset: 0;
+background-image:
+linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+background-size: 60px 60px;
+mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+
+.hero-content { position: relative; max-width: 720px; }
+
+.hero-tag {
+display: inline-flex; align-items: center; gap: 0.6rem;
+font-size: 0.75rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–gold);
+margin-bottom: 2rem;
+opacity: 0;
+animation: fadeUp 0.8s 0.2s forwards;
+}
+.hero-tag::before {
+content: ‘’;
+display: block; width: 28px; height: 1px;
+background: var(–gold);
+}
+html[lang=“ar”] .hero-tag { flex-direction: row-reverse; }
+html[lang=“ar”] .hero-tag::before { display: none; }
+html[lang=“ar”] .hero-tag::after {
+content: ‘’;
+display: block; width: 28px; height: 1px;
+background: var(–gold);
+}
+
+h1 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2.8rem, 6vw, 5.2rem);
+font-weight: 900;
+line-height: 1.05;
+margin-bottom: 1.8rem;
+opacity: 0;
+animation: fadeUp 0.9s 0.4s forwards;
+}
+html[lang=“ar”] h1 {
+font-family: ‘Noto Sans Arabic’, sans-serif;
+font-size: clamp(2.2rem, 5vw, 4.2rem);
+line-height: 1.3;
+}
+
+h1 em { font-style: italic; color: var(–gold); }
+html[lang=“ar”] h1 em { font-style: normal; }
+
+.hero-sub {
+font-size: 1.1rem;
+line-height: 1.7;
+color: rgba(250,247,242,0.65);
+max-width: 500px;
+margin-bottom: 3rem;
+font-weight: 300;
+opacity: 0;
+animation: fadeUp 0.9s 0.6s forwards;
+}
+html[lang=“ar”] .hero-sub { font-size: 1rem; }
+
+.hero-actions {
+display: flex; gap: 1rem; flex-wrap: wrap;
+opacity: 0;
+animation: fadeUp 0.9s 0.8s forwards;
+}
+html[lang=“ar”] .hero-actions { flex-direction: row-reverse; }
+
+.btn-primary {
+background: var(–gold);
+color: var(–ink);
+padding: 1rem 2.4rem;
+font-family: inherit;
+font-size: 0.9rem;
+font-weight: 500;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+border: none;
+cursor: pointer;
+text-decoration: none;
+display: inline-block;
+transition: background 0.2s, transform 0.2s;
+}
+.btn-primary:hover { background: var(–gold-light); transform: translateY(-2px); }
+
+.btn-ghost {
+background: transparent;
+color: var(–warm-white);
+padding: 1rem 2.4rem;
+font-family: inherit;
+font-size: 0.9rem;
+font-weight: 500;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+border: 1px solid rgba(250,247,242,0.2);
+cursor: pointer;
+text-decoration: none;
+display: inline-block;
+transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: var(–gold); color: var(–gold); }
+
+.hero-stat-row {
+position: absolute;
+right: 6%; bottom: 12%;
+display: flex; flex-direction: column; gap: 2rem;
+opacity: 0;
+animation: fadeLeft 1s 1.2s forwards;
+}
+html[lang=“ar”] .hero-stat-row { right: auto; left: 6%; text-align: left; }
+
+.hero-stat { text-align: right; }
+.hero-stat .num {
+font-family: ‘Playfair Display’, serif;
+font-size: 2.4rem;
+font-weight: 700;
+color: var(–gold);
+line-height: 1;
+}
+.hero-stat .label {
+font-size: 0.75rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(–muted);
+margin-top: 0.2rem;
+}
+
+/* ── TICKER ── */
+.ticker {
+background: var(–gold);
+padding: 0.7rem 0;
+overflow: hidden;
+white-space: nowrap;
+}
+.ticker-inner {
+display: inline-flex;
+animation: ticker 28s linear infinite;
+}
+.ticker-item {
+font-size: 0.78rem;
+font-weight: 500;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: var(–ink);
+padding: 0 2rem;
+}
+.ticker-item::after { content: ‘◆’; margin-left: 2rem; opacity: 0.4; }
+
+/* ── SECTION BASE ── */
+section { padding: 7rem 6%; }
+
+.section-label {
+font-size: 0.72rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–gold);
+margin-bottom: 1rem;
+display: flex; align-items: center; gap: 0.8rem;
+}
+.section-label::before {
+content: ‘’; display: block;
+width: 24px; height: 1px;
+background: var(–gold);
+}
+html[lang=“ar”] .section-label { flex-direction: row-reverse; letter-spacing: 0; }
+html[lang=“ar”] .section-label::before { display: none; }
+html[lang=“ar”] .section-label::after {
+content: ‘’; display: block;
+width: 24px; height: 1px;
+background: var(–gold);
+}
+
+.section-title {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2rem, 4vw, 3.2rem);
+font-weight: 700;
+line-height: 1.15;
+margin-bottom: 1.2rem;
+}
+html[lang=“ar”] .section-title {
+font-family: ‘Noto Sans Arabic’, sans-serif;
+font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+line-height: 1.4;
+}
+
+.section-sub {
+font-size: 1rem;
+color: rgba(250,247,242,0.55);
+line-height: 1.7;
+font-weight: 300;
+max-width: 480px;
+}
+
+/* ── HOW ── */
+#how {
+background: var(–ink-soft);
+border-top: 1px solid var(–border);
+border-bottom: 1px solid var(–border);
+}
+.how-inner {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 5rem;
+align-items: start;
+}
+.steps { margin-top: 3.5rem; display: flex; flex-direction: column; }
+.step {
+display: flex; gap: 1.8rem;
+padding: 2rem 0;
+border-bottom: 1px solid var(–border);
+cursor: default;
+}
+html[lang=“ar”] .step { flex-direction: row-reverse; text-align: right; }
+.step:first-child { border-top: 1px solid var(–border); }
+.step-num {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.8rem; font-weight: 700;
+color: var(–border);
+line-height: 1; min-width: 40px;
+transition: color 0.3s;
+}
+.step:hover .step-num { color: var(–gold); }
+.step-body h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.15rem; font-weight: 700;
+margin-bottom: 0.5rem;
+}
+html[lang=“ar”] .step-body h3 { font-family: ‘Noto Sans Arabic’, sans-serif; }
+.step-body p { font-size: 0.9rem; color: rgba(250,247,242,0.55); line-height: 1.6; }
+
+/* CARD MOCKUP */
+.card-mockup {
+position: sticky; top: 8rem;
+background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
+border: 1px solid var(–border);
+border-radius: 16px;
+padding: 2.5rem;
+box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.1);
+overflow: hidden;
+}
+.card-mockup::before {
+content: ‘’;
+position: absolute; top: -50%; left: -50%;
+width: 200%; height: 200%;
+background: radial-gradient(circle at 60% 30%, rgba(201,168,76,0.08) 0%, transparent 50%);
+pointer-events: none;
+}
+.mock-brand { display: flex; align-items: center; gap: 1rem; margin-bottom: 2.5rem; }
+.mock-logo {
+width: 44px; height: 44px;
+background: var(–gold); border-radius: 10px;
+display: flex; align-items: center; justify-content: center;
+font-family: ‘Playfair Display’, serif;
+font-size: 1.1rem; font-weight: 700; color: var(–ink);
+}
+.mock-brand-name { font-family: ‘Playfair Display’, serif; font-size: 1.05rem; font-weight: 700; }
+.mock-brand-sub { font-size: 0.75rem; color: var(–muted); }
+.mock-points {
+background: rgba(201,168,76,0.08);
+border: 1px solid rgba(201,168,76,0.15);
+border-radius: 10px; padding: 1.5rem; margin-bottom: 1.5rem; text-align: center;
+}
+.mock-points-num {
+font-family: ‘Playfair Display’, serif;
+font-size: 3rem; font-weight: 900; color: var(–gold); line-height: 1;
+}
+.mock-points-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(–muted); margin-top: 0.4rem; }
+.mock-progress { margin-bottom: 1.5rem; }
+.mock-progress-top { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(–muted); margin-bottom: 0.6rem; }
+.mock-bar { height: 6px; background: rgba(255,255,255,0.06); border-radius: 99px; overflow: hidden; }
+.mock-bar-fill { height: 100%; width: 74%; background: linear-gradient(90deg, var(–gold), var(–gold-light)); border-radius: 99px; animation: barFill 1.5s 0.5s ease-out both; }
+.mock-rewards { display: flex; flex-direction: column; gap: 0.6rem; }
+.mock-reward {
+display: flex; justify-content: space-between; align-items: center;
+background: rgba(255,255,255,0.03);
+border: 1px solid rgba(255,255,255,0.06);
+border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.82rem;
+}
+.mock-reward-pts { font-size: 0.75rem; color: var(–gold); font-weight: 500; }
+.mock-reward.active { border-color: rgba(201,168,76,0.3); background: rgba(201,168,76,0.05); }
+
+/* ── WHY ── */
+#why { background: var(–ink); }
+.why-grid {
+display: grid; grid-template-columns: repeat(3, 1fr);
+gap: 1.5px; margin-top: 4rem;
+background: var(–border); border: 1px solid var(–border);
+}
+.why-card { background: var(–ink); padding: 2.5rem; transition: background 0.3s; }
+.why-card:hover { background: rgba(201,168,76,0.04); }
+html[lang=“ar”] .why-card { text-align: right; }
+.why-icon { font-size: 1.6rem; margin-bottom: 1.2rem; display: block; }
+.why-card h3 { font-family: ‘Playfair Display’, serif; font-size: 1.15rem; margin-bottom: 0.7rem; }
+html[lang=“ar”] .why-card h3 { font-family: ‘Noto Sans Arabic’, sans-serif; }
+.why-card p { font-size: 0.88rem; color: rgba(250,247,242,0.5); line-height: 1.65; }
+
+/* ── WHO ── */
+#who { background: var(–ink-soft); border-top: 1px solid var(–border); }
+.who-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
+html[lang=“ar”] .who-header { direction: rtl; }
+.who-categories { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.who-cat {
+border: 1px solid var(–border); padding: 1.8rem 1.2rem;
+text-align: center; transition: border-color 0.3s, background 0.3s; cursor: default;
+}
+.who-cat:hover { border-color: var(–gold); background: rgba(201,168,76,0.05); }
+.who-cat-icon { font-size: 1.8rem; display: block; margin-bottom: 0.8rem; }
+.who-cat-name { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em; }
+.who-cat-count { font-size: 0.7rem; color: var(–muted); margin-top: 0.3rem; }
+
+/* ── CONTACT ── */
+#contact { background: var(–ink); border-top: 1px solid var(–border); }
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+html[lang=“ar”] .contact-inner { direction: rtl; }
+.contact-info { padding-top: 0.5rem; }
+.contact-detail { display: flex; align-items: center; gap: 1rem; padding: 1.4rem 0; border-bottom: 1px solid var(–border); }
+html[lang=“ar”] .contact-detail { flex-direction: row-reverse; text-align: right; }
+.contact-detail:first-of-type { border-top: 1px solid var(–border); margin-top: 2.5rem; }
+.contact-icon { width: 36px; height: 36px; border: 1px solid var(–border); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+.contact-detail-text { font-size: 0.9rem; }
+.contact-detail-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(–muted); margin-bottom: 0.2rem; }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+html[lang=“ar”] .contact-form { direction: rtl; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(–muted); }
+html[lang=“ar”] .form-group label { letter-spacing: 0; }
+.form-group input, .form-group select, .form-group textarea {
+background: rgba(255,255,255,0.03); border: 1px solid var(–border);
+color: var(–warm-white); padding: 0.85rem 1rem;
+font-family: inherit; font-size: 0.9rem; outline: none;
+transition: border-color 0.2s; width: 100%;
+}
+.form-group input::placeholder, .form-group textarea::placeholder { color: rgba(250,247,242,0.2); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(–gold); }
+.form-group select option { background: #1a1a1a; }
+.form-group textarea { resize: vertical; min-height: 110px; }
+.form-submit {
+background: var(–gold); color: var(–ink);
+padding: 1.1rem 2rem; font-family: inherit;
+font-size: 0.9rem; font-weight: 500; letter-spacing: 0.08em;
+text-transform: uppercase; border: none; cursor: pointer;
+transition: background 0.2s, transform 0.2s; margin-top: 0.5rem;
+}
+.form-submit:hover { background: var(–gold-light); transform: translateY(-1px); }
+
+/* ── FOOTER ── */
+footer {
+background: var(–ink-soft); border-top: 1px solid var(–border);
+padding: 2.5rem 6%;
+display: flex; justify-content: space-between; align-items: center;
+flex-wrap: wrap; gap: 1rem;
+}
+html[lang=“ar”] footer { flex-direction: row-reverse; }
+.footer-logo { font-family: ‘Playfair Display’, serif; font-size: 1.1rem; color: var(–gold); font-weight: 700; }
+.footer-logo span { color: var(–warm-white); }
+footer p { font-size: 0.78rem; color: var(–muted); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeLeft { from { opacity:0; transform:translateX(24px); } to { opacity:1; transform:translateX(0); } }
+@keyframes ticker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+@keyframes barFill { from { width:0; } to { width:74%; } }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+nav ul { display: none; }
+.how-inner, .contact-inner, .who-header { grid-template-columns: 1fr; gap: 3rem; }
+.why-grid { grid-template-columns: 1fr 1fr; }
+.who-categories { grid-template-columns: repeat(2, 1fr); }
+.hero-stat-row { display: none; }
+.form-row { grid-template-columns: 1fr; }
+.card-mockup { position: static; }
+}
+@media (max-width: 540px) {
+.why-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#" class="nav-logo">Fusion<span> Morocco</span></a>
+  <ul>
+    <li><a href="#how">
+      <span data-lang="en" class="inline">How It Works</span>
+      <span data-lang="fr" class="inline">Comment ça marche</span>
+      <span data-lang="ar" class="inline">كيف يعمل</span>
+    </a></li>
+    <li><a href="#why">
+      <span data-lang="en" class="inline">Why Loyalty</span>
+      <span data-lang="fr" class="inline">Pourquoi la fidélité</span>
+      <span data-lang="ar" class="inline">لماذا الولاء</span>
+    </a></li>
+    <li><a href="#who">
+      <span data-lang="en" class="inline">Who It's For</span>
+      <span data-lang="fr" class="inline">Pour qui</span>
+      <span data-lang="ar" class="inline">لمن هو</span>
+    </a></li>
+    <li><a href="#contact" class="nav-cta">
+      <span data-lang="en" class="inline">Get Started</span>
+      <span data-lang="fr" class="inline">Commencer</span>
+      <span data-lang="ar" class="inline">ابدأ الآن</span>
+    </a></li>
+  </ul>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" onclick="setLang('ar')">AR</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span data-lang="en" class="inline">Loyalty Programs · Morocco</span>
+      <span data-lang="fr" class="inline">Programmes Fidélité · Maroc</span>
+      <span data-lang="ar" class="inline">برامج الولاء · المغرب</span>
+    </div>
+    <h1>
+      <span data-lang="en">Turn Every Customer Into a <em>Regular</em></span>
+      <span data-lang="fr">Transformez Chaque Client en <em>Habitué</em></span>
+      <span data-lang="ar">حوّل كل زبون إلى <em>زبون دائم</em></span>
+    </h1>
+    <p class="hero-sub">
+      <span data-lang="en" class="inline">Fusion Morocco designs and deploys custom loyalty programs for Morocco's top restaurants, cafés, and retail brands — so your best customers keep coming back.</span>
+      <span data-lang="fr" class="inline">Fusion Morocco conçoit et déploie des programmes de fidélité sur mesure pour les meilleurs restaurants, cafés et enseignes du Maroc — pour que vos meilleurs clients reviennent toujours.</span>
+      <span data-lang="ar" class="inline">فيوجن موروكو تصمم وتطلق برامج ولاء مخصصة لأفضل المطاعم والمقاهي والعلامات التجارية في المغرب — لتحافظ على أفضل زبائنك.</span>
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        <span data-lang="en" class="inline">Start Your Program</span>
+        <span data-lang="fr" class="inline">Lancez votre programme</span>
+        <span data-lang="ar" class="inline">ابدأ برنامجك</span>
+      </a>
+      <a href="#how" class="btn-ghost">
+        <span data-lang="en" class="inline">See How It Works</span>
+        <span data-lang="fr" class="inline">Voir comment ça marche</span>
+        <span data-lang="ar" class="inline">اكتشف كيف يعمل</span>
+      </a>
+    </div>
+  </div>
+  <div class="hero-stat-row">
+    <div class="hero-stat">
+      <div class="num">+35%</div>
+      <div class="label">
+        <span data-lang="en" class="inline">Return Visit Rate</span>
+        <span data-lang="fr" class="inline">Taux de retour</span>
+        <span data-lang="ar" class="inline">معدل العودة</span>
+      </div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">3×</div>
+      <div class="label">
+        <span data-lang="en" class="inline">Lifetime Spend</span>
+        <span data-lang="fr" class="inline">Dépenses à vie</span>
+        <span data-lang="ar" class="inline">الإنفاق مدى الحياة</span>
+      </div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">65%</div>
+      <div class="label">
+        <span data-lang="en" class="inline">Referral Increase</span>
+        <span data-lang="fr" class="inline">Hausse des recommandations</span>
+        <span data-lang="ar" class="inline">زيادة الإحالات</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item" data-lang="en">Restaurants</span>
+    <span class="ticker-item" data-lang="en">Coffee Shops</span>
+    <span class="ticker-item" data-lang="en">Retail Chains</span>
+    <span class="ticker-item" data-lang="en">Fast Food</span>
+    <span class="ticker-item" data-lang="en">Wellness & Gyms</span>
+    <span class="ticker-item" data-lang="en">Pharmacies</span>
+    <span class="ticker-item" data-lang="fr">Restaurants</span>
+    <span class="ticker-item" data-lang="fr">Cafés</span>
+    <span class="ticker-item" data-lang="fr">Enseignes</span>
+    <span class="ticker-item" data-lang="fr">Fast Food</span>
+    <span class="ticker-item" data-lang="fr">Bien-être</span>
+    <span class="ticker-item" data-lang="fr">Pharmacies</span>
+    <span class="ticker-item" data-lang="ar">مطاعم</span>
+    <span class="ticker-item" data-lang="ar">مقاهي</span>
+    <span class="ticker-item" data-lang="ar">متاجر</span>
+    <span class="ticker-item" data-lang="ar">وجبات سريعة</span>
+    <span class="ticker-item" data-lang="ar">صيدليات</span>
+    <span class="ticker-item" data-lang="ar">رياضة وصحة</span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item" data-lang="en">Restaurants</span>
+    <span class="ticker-item" data-lang="en">Coffee Shops</span>
+    <span class="ticker-item" data-lang="en">Retail Chains</span>
+    <span class="ticker-item" data-lang="en">Fast Food</span>
+    <span class="ticker-item" data-lang="en">Wellness & Gyms</span>
+    <span class="ticker-item" data-lang="en">Pharmacies</span>
+    <span class="ticker-item" data-lang="fr">Restaurants</span>
+    <span class="ticker-item" data-lang="fr">Cafés</span>
+    <span class="ticker-item" data-lang="fr">Enseignes</span>
+    <span class="ticker-item" data-lang="fr">Fast Food</span>
+    <span class="ticker-item" data-lang="fr">Bien-être</span>
+    <span class="ticker-item" data-lang="fr">Pharmacies</span>
+    <span class="ticker-item" data-lang="ar">مطاعم</span>
+    <span class="ticker-item" data-lang="ar">مقاهي</span>
+    <span class="ticker-item" data-lang="ar">متاجر</span>
+    <span class="ticker-item" data-lang="ar">وجبات سريعة</span>
+    <span class="ticker-item" data-lang="ar">صيدليات</span>
+    <span class="ticker-item" data-lang="ar">رياضة وصحة</span>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+
+<section id="how">
+  <div class="how-inner">
+    <div>
+      <div class="section-label">
+        <span data-lang="en" class="inline">Process</span>
+        <span data-lang="fr" class="inline">Processus</span>
+        <span data-lang="ar" class="inline">المراحل</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="en">A Program Built Around Your Brand</span>
+        <span data-lang="fr">Un Programme Conçu pour Votre Marque</span>
+        <span data-lang="ar">برنامج مصمم حول علامتك التجارية</span>
+      </h2>
+      <p class="section-sub">
+        <span data-lang="en" class="inline">From first call to launch, we handle everything — so you can focus on running your business.</span>
+        <span data-lang="fr" class="inline">Du premier appel au lancement, nous gérons tout — pour que vous puissiez vous concentrer sur votre activité.</span>
+        <span data-lang="ar" class="inline">من أول مكالمة حتى الإطلاق، نتولى كل شيء — لتركز أنت على إدارة أعمالك.</span>
+      </p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h3>
+              <span data-lang="en" class="inline">Discovery Call</span>
+              <span data-lang="fr" class="inline">Appel de découverte</span>
+              <span data-lang="ar" class="inline">مكالمة استكشافية</span>
+            </h3>
+            <p>
+              <span data-lang="en" class="inline">We learn your business, your customers, and what a "loyal regular" looks like for you.</span>
+              <span data-lang="fr" class="inline">Nous apprenons à connaître votre activité, vos clients, et ce que signifie un "habitué fidèle" pour vous.</span>
+              <span data-lang="ar" class="inline">نتعرف على نشاطك التجاري وزبائنك، وما يعنيه الزبون الدائم بالنسبة لك.</span>
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h3>
+              <span data-lang="en" class="inline">Program Design</span>
+              <span data-lang="fr" class="inline">Conception du programme</span>
+              <span data-lang="ar" class="inline">تصميم البرنامج</span>
+            </h3>
+            <p>
+              <span data-lang="en" class="inline">We build a custom points structure, reward tiers, and branded experience tailored to your audience.</span>
+              <span data-lang="fr" class="inline">Nous créons un système de points sur mesure, des niveaux de récompenses et une expérience à votre image.</span>
+              <span data-lang="ar" class="inline">نبني نظام نقاط مخصصاً، ومستويات مكافآت، وتجربة تعكس هويتك البصرية.</span>
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <h3>
+              <span data-lang="en" class="inline">Setup & Integration</span>
+              <span data-lang="fr" class="inline">Mise en place et intégration</span>
+              <span data-lang="ar" class="inline">الإعداد والتكامل</span>
+            </h3>
+            <p>
+              <span data-lang="en" class="inline">Your program goes live on app, QR code, or web — fully integrated with your existing ordering system.</span>
+              <span data-lang="fr" class="inline">Votre programme est lancé sur application, QR code ou web — entièrement intégré à votre système existant.</span>
+              <span data-lang="ar" class="inline">يُطلق برنامجك عبر التطبيق أو QR أو الويب — متكاملاً مع نظامك الحالي.</span>
+            </p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <h3>
+              <span data-lang="en" class="inline">Launch & Grow</span>
+              <span data-lang="fr" class="inline">Lancement et croissance</span>
+              <span data-lang="ar" class="inline">الإطلاق والنمو</span>
+            </h3>
+            <p>
+              <span data-lang="en" class="inline">We run the launch campaign, onboard your first members, and track results every month.</span>
+              <span data-lang="fr" class="inline">Nous gérons la campagne de lancement, intégrons vos premiers membres et suivons les résultats chaque mois.</span>
+              <span data-lang="ar" class="inline">ندير حملة الإطلاق، نُسجّل أول الأعضاء، ونتابع النتائج شهرياً.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+```
+<!-- MOCKUP -->
+<div class="card-mockup">
+  <div class="mock-brand">
+    <div class="mock-logo">Z</div>
+    <div>
+      <div class="mock-brand-name">Zaytouna Kitchen</div>
+      <div class="mock-brand-sub">
+        <span data-lang="en" class="inline">Loyalty Member · Gold Tier</span>
+        <span data-lang="fr" class="inline">Membre fidélité · Niveau Or</span>
+        <span data-lang="ar" class="inline">عضو ولاء · المستوى الذهبي</span>
+      </div>
+    </div>
+  </div>
+  <div class="mock-points">
+    <div class="mock-points-num">740</div>
+    <div class="mock-points-label">
+      <span data-lang="en" class="inline">Points Earned</span>
+      <span data-lang="fr" class="inline">Points accumulés</span>
+      <span data-lang="ar" class="inline">النقاط المكتسبة</span>
+    </div>
+  </div>
+  <div class="mock-progress">
+    <div class="mock-progress-top">
+      <span>
+        <span data-lang="en" class="inline">Next reward</span>
+        <span data-lang="fr" class="inline">Prochaine récompense</span>
+        <span data-lang="ar" class="inline">المكافأة التالية</span>
+      </span>
+      <span style="color: var(--gold-light)">740 / 1000 pts</span>
+    </div>
+    <div class="mock-bar"><div class="mock-bar-fill"></div></div>
+  </div>
+  <div class="mock-rewards">
+    <div class="mock-reward active">
+      <span>🫒
+        <span data-lang="en" class="inline">Free Appetiser Platter</span>
+        <span data-lang="fr" class="inline">Plateau d'entrées offert</span>
+        <span data-lang="ar" class="inline">طبق مقبلات مجاني</span>
+      </span>
+      <span class="mock-reward-pts">500 pts ✓</span>
+    </div>
+    <div class="mock-reward">
+      <span>🎁
+        <span data-lang="en" class="inline">Free Dessert of Choice</span>
+        <span data-lang="fr" class="inline">Dessert au choix offert</span>
+        <span data-lang="ar" class="inline">حلوى مجانية باختيارك</span>
+      </span>
+      <span class="mock-reward-pts">1,000 pts</span>
+    </div>
+    <div class="mock-reward">
+      <span>⭐
+        <span data-lang="en" class="inline">Chef's Table Experience</span>
+        <span data-lang="fr" class="inline">Table du chef privée</span>
+        <span data-lang="ar" class="inline">تجربة طاولة الشيف</span>
+      </span>
+      <span class="mock-reward-pts">2,500 pts</span>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- WHY LOYALTY -->
+
+<section id="why">
+  <div class="section-label">
+    <span data-lang="en" class="inline">The Case for Loyalty</span>
+    <span data-lang="fr" class="inline">Pourquoi la fidélité</span>
+    <span data-lang="ar" class="inline">أهمية برامج الولاء</span>
+  </div>
+  <h2 class="section-title">
+    <span data-lang="en">Why Moroccan Brands Need This Now</span>
+    <span data-lang="fr">Pourquoi les Marques Marocaines en ont Besoin Maintenant</span>
+    <span data-lang="ar">لماذا تحتاج العلامات المغربية لهذا الآن</span>
+  </h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="why-icon">📈</span>
+      <h3>
+        <span data-lang="en" class="inline">Repeat Visits Up 35%</span>
+        <span data-lang="fr" class="inline">+35% de visites répétées</span>
+        <span data-lang="ar" class="inline">زيادة العودة بنسبة 35%</span>
+      </h3>
+      <p>
+        <span data-lang="en" class="inline">Loyalty program members return significantly more often than walk-in customers — and spend more each visit.</span>
+        <span data-lang="fr" class="inline">Les membres d'un programme de fidélité reviennent bien plus souvent que les clients ordinaires — et dépensent davantage à chaque visite.</span>
+        <span data-lang="ar" class="inline">أعضاء برامج الولاء يعودون أكثر بكثير من الزبائن العاديين — وينفقون أكثر في كل زيارة.</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">💸</span>
+      <h3>
+        <span data-lang="en" class="inline">3× Lifetime Value</span>
+        <span data-lang="fr" class="inline">3× la valeur à vie</span>
+        <span data-lang="ar" class="inline">3 أضعاف القيمة الدائمة</span>
+      </h3>
+      <p>
+        <span data-lang="en" class="inline">Loyal customers order three times more over their lifetime. Retention is cheaper than acquisition.</span>
+        <span data-lang="fr" class="inline">Les clients fidèles commandent trois fois plus sur leur durée de vie. La rétention coûte moins cher que l'acquisition.</span>
+        <span data-lang="ar" class="inline">الزبائن الوفيون يطلبون ثلاثة أضعاف طوال حياتهم. الاحتفاظ بالزبائن أرخص من اكتسابهم.</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">🗣️</span>
+      <h3>
+        <span data-lang="en" class="inline">65% More Referrals</span>
+        <span data-lang="fr" class="inline">65% de recommandations en plus</span>
+        <span data-lang="ar" class="inline">65% إحالات إضافية</span>
+      </h3>
+      <p>
+        <span data-lang="en" class="inline">Customers with rewards actively recommend your brand — turning your program into a word-of-mouth engine.</span>
+        <span data-lang="fr" class="inline">Les clients récompensés recommandent activement votre marque — votre programme devient un moteur de bouche-à-oreille.</span>
+        <span data-lang="ar" class="inline">الزبائن المكافَأون يوصون بعلامتك بشكل فعال — يتحول برنامجك إلى محرك للتسويق الشفهي.</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">📊</span>
+      <h3>
+        <span data-lang="en" class="inline">Real Customer Data</span>
+        <span data-lang="fr" class="inline">Données clients réelles</span>
+        <span data-lang="ar" class="inline">بيانات حقيقية عن الزبائن</span>
+      </h3>
+      <p>
+        <span data-lang="en" class="inline">Know who visits, how often, and what they order. Make smarter decisions based on real behaviour.</span>
+        <span data-lang="fr" class="inline">Sachez qui visite, à quelle fréquence et ce qu'il commande. Prenez de meilleures décisions basées sur le comportement réel.</span>
+        <span data-lang="ar" class="inline">اعرف من يزورك، كم مرة، وماذا يطلب. اتخذ قرارات أذكى بناءً على بيانات حقيقية.</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">🇲🇦</span>
+      <h3>
+        <span data-lang="en" class="inline">Untapped in Morocco</span>
+        <span data-lang="fr" class="inline">Marché encore vierge au Maroc</span>
+        <span data-lang="ar" class="inline">فرصة غير مستغلة في المغرب</span>
+      </h3>
+      <p>
+        <span data-lang="en" class="inline">Most Moroccan brands have zero digital loyalty. You get first-mover advantage in a market ready for it.</span>
+        <span data-lang="fr" class="inline">La plupart des marques marocaines n'ont aucun programme de fidélité numérique. Soyez les premiers sur un marché prêt.</span>
+        <span data-lang="ar" class="inline">معظم العلامات المغربية تخلو من الولاء الرقمي. أنت تحصل على ميزة السبق في سوق جاهز لذلك.</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">🔄</span>
+      <h3>
+        <span data-lang="en" class="inline">Works With Your Setup</span>
+        <span data-lang="fr" class="inline">Compatible avec votre système</span>
+        <span data-lang="ar" class="inline">يتكيف مع نظامك الحالي</span>
+      </h3>
+      <p>
+        <span data-lang="en" class="inline">QR codes, WhatsApp, web app, or full integration — we build around what you already have.</span>
+        <span data-lang="fr" class="inline">QR codes, WhatsApp, application web ou intégration complète — nous construisons autour de ce que vous avez déjà.</span>
+        <span data-lang="ar" class="inline">QR كود، واتساب، تطبيق ويب أو تكامل كامل — نبني حول ما لديك بالفعل.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+
+<section id="who">
+  <div class="who-header">
+    <div>
+      <div class="section-label">
+        <span data-lang="en" class="inline">Industries</span>
+        <span data-lang="fr" class="inline">Secteurs</span>
+        <span data-lang="ar" class="inline">القطاعات</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="en">Built for Morocco's Favourite Brands</span>
+        <span data-lang="fr">Conçu pour les Meilleures Marques du Maroc</span>
+        <span data-lang="ar">مصمم لأفضل العلامات المغربية</span>
+      </h2>
+    </div>
+    <p class="section-sub">
+      <span data-lang="en" class="inline">From Hay Riad restaurants to Agdal coffee chains — if your customers come back, we build the system that makes it happen more.</span>
+      <span data-lang="fr" class="inline">Des restaurants de Hay Riad aux cafés d'Agdal — si vos clients reviennent, nous construisons le système qui amplifie cela.</span>
+      <span data-lang="ar" class="inline">من مطاعم حي الرياض إلى مقاهي أكدال — إذا كان زبائنك يعودون، نبني النظام الذي يجعل ذلك يحدث أكثر.</span>
+    </p>
+  </div>
+  <div class="who-categories">
+    <div class="who-cat">
+      <span class="who-cat-icon">🍽️</span>
+      <div class="who-cat-name">
+        <span data-lang="en" class="inline">Restaurants</span>
+        <span data-lang="fr" class="inline">Restaurants</span>
+        <span data-lang="ar" class="inline">مطاعم</span>
+      </div>
+      <div class="who-cat-count">
+        <span data-lang="en" class="inline">Dine-in & Delivery</span>
+        <span data-lang="fr" class="inline">Sur place & livraison</span>
+        <span data-lang="ar" class="inline">داخل المحل والتوصيل</span>
+      </div>
+    </div>
+    <div class="who-cat">
+      <span class="who-cat-icon">☕</span>
+      <div class="who-cat-name">
+        <span data-lang="en" class="inline">Cafés</span>
+        <span data-lang="fr" class="inline">Cafés</span>
+        <span data-lang="ar" class="inline">مقاهي</span>
+      </div>
+      <div class="who-cat-count">
+        <span data-lang="en" class="inline">Coffee & Brunch</span>
+        <span data-lang="fr" class="inline">Café & brunch</span>
+        <span data-lang="ar" class="inline">قهوة وفطور</span>
+      </div>
+    </div>
+    <div class="who-cat">
+      <span class="who-cat-icon">🛒</span>
+      <div class="who-cat-name">
+        <span data-lang="en" class="inline">Retail</span>
+        <span data-lang="fr" class="inline">Commerce</span>
+        <span data-lang="ar" class="inline">متاجر</span>
+      </div>
+      <div class="who-cat-count">
+        <span data-lang="en" class="inline">Fashion & Goods</span>
+        <span data-lang="fr" class="inline">Mode & produits</span>
+        <span data-lang="ar" class="inline">موضة وبضائع</span>
+      </div>
+    </div>
+    <div class="who-cat">
+      <span class="who-cat-icon">🍗</span>
+      <div class="who-cat-name">
+        <span data-lang="en" class="inline">Fast Food</span>
+        <span data-lang="fr" class="inline">Restauration rapide</span>
+        <span data-lang="ar" class="inline">وجبات سريعة</span>
+      </div>
+      <div class="who-cat-count">
+        <span data-lang="en" class="inline">QSR & Takeaway</span>
+        <span data-lang="fr" class="inline">À emporter</span>
+        <span data-lang="ar" class="inline">وجبات للمنزل</span>
+      </div>
+    </div>
+    <div class="who-cat">
+      <span class="who-cat-icon">💊</span>
+      <div class="who-cat-name">
+        <span data-lang="en" class="inline">Pharmacies</span>
+        <span data-lang="fr" class="inline">Pharmacies</span>
+        <span data-lang="ar" class="inline">صيدليات</span>
+      </div>
+      <div class="who-cat-count">
+        <span data-lang="en" class="inline">Health & Wellness</span>
+        <span data-lang="fr" class="inline">Santé & bien-être</span>
+        <span data-lang="ar" class="inline">صحة وعناية</span>
+      </div>
+    </div>
+    <div class="who-cat">
+      <span class="who-cat-icon">🥤</span>
+      <div class="who-cat-name">
+        <span data-lang="en" class="inline">Juice Bars</span>
+        <span data-lang="fr" class="inline">Bars à jus</span>
+        <span data-lang="ar" class="inline">بارات العصير</span>
+      </div>
+      <div class="who-cat-count">
+        <span data-lang="en" class="inline">Health Drinks</span>
+        <span data-lang="fr" class="inline">Boissons santé</span>
+        <span data-lang="ar" class="inline">مشروبات صحية</span>
+      </div>
+    </div>
+    <div class="who-cat">
+      <span class="who-cat-icon">💪</span>
+      <div class="who-cat-name">
+        <span data-lang="en" class="inline">Gyms & Spas</span>
+        <span data-lang="fr" class="inline">Salles & spas</span>
+        <span data-lang="ar" class="inline">الرياضة والسبا</span>
+      </div>
+      <div class="who-cat-count">
+        <span data-lang="en" class="inline">Subscriptions</span>
+        <span data-lang="fr" class="inline">Abonnements</span>
+        <span data-lang="ar" class="inline">اشتراكات</span>
+      </div>
+    </div>
+    <div class="who-cat">
+      <span class="who-cat-icon">🏪</span>
+      <div class="who-cat-name">
+        <span data-lang="en" class="inline">Supermarkets</span>
+        <span data-lang="fr" class="inline">Supermarchés</span>
+        <span data-lang="ar" class="inline">سوبرماركت</span>
+      </div>
+      <div class="who-cat-count">
+        <span data-lang="en" class="inline">Daily Essentials</span>
+        <span data-lang="fr" class="inline">Courses quotidiennes</span>
+        <span data-lang="ar" class="inline">احتياجات يومية</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="section-label">
+        <span data-lang="en" class="inline">Contact</span>
+        <span data-lang="fr" class="inline">Contact</span>
+        <span data-lang="ar" class="inline">تواصل معنا</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="en">Let's Build Your Program</span>
+        <span data-lang="fr">Construisons Votre Programme</span>
+        <span data-lang="ar">لنبني برنامجك معاً</span>
+      </h2>
+      <p class="section-sub">
+        <span data-lang="en" class="inline">Tell us about your brand and we'll put together a loyalty program proposal — no commitment required.</span>
+        <span data-lang="fr" class="inline">Parlez-nous de votre marque et nous préparerons une proposition — sans engagement.</span>
+        <span data-lang="ar" class="inline">أخبرنا عن علامتك التجارية وسنعد لك مقترح برنامج ولاء — دون أي التزام.</span>
+      </p>
+      <div class="contact-detail">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-detail-label">
+            <span data-lang="en" class="inline">Based In</span>
+            <span data-lang="fr" class="inline">Basé à</span>
+            <span data-lang="ar" class="inline">مقرنا</span>
+          </div>
+          <div class="contact-detail-text">
+            <span data-lang="en" class="inline">Rabat, Morocco</span>
+            <span data-lang="fr" class="inline">Rabat, Maroc</span>
+            <span data-lang="ar" class="inline">الرباط، المغرب</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">📱</div>
+        <div>
+          <div class="contact-detail-label">WhatsApp</div>
+          <div class="contact-detail-text">
+            <span data-lang="en" class="inline">Message us for a fast reply</span>
+            <span data-lang="fr" class="inline">Écrivez-nous pour une réponse rapide</span>
+            <span data-lang="ar" class="inline">راسلنا للحصول على رد سريع</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-detail-label">Email</div>
+          <div class="contact-detail-text">hello@fusionmorocco.ma</div>
+        </div>
+      </div>
+    </div>
+
+```
+<div>
+  <div class="contact-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label>
+          <span data-lang="en" class="inline">Your Name</span>
+          <span data-lang="fr" class="inline">Votre nom</span>
+          <span data-lang="ar" class="inline">اسمك</span>
+        </label>
+        <input type="text" placeholder="Hassan Essajid">
+      </div>
+      <div class="form-group">
+        <label>
+          <span data-lang="en" class="inline">Brand / Business Name</span>
+          <span data-lang="fr" class="inline">Nom de la marque</span>
+          <span data-lang="ar" class="inline">اسم العلامة التجارية</span>
+        </label>
+        <input type="text">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>
+        <span data-lang="en" class="inline">Email Address</span>
+        <span data-lang="fr" class="inline">Adresse e-mail</span>
+        <span data-lang="ar" class="inline">البريد الإلكتروني</span>
+      </label>
+      <input type="email" placeholder="you@yourbrand.ma">
+    </div>
+    <div class="form-group">
+      <label>
+        <span data-lang="en" class="inline">Phone / WhatsApp</span>
+        <span data-lang="fr" class="inline">Téléphone / WhatsApp</span>
+        <span data-lang="ar" class="inline">الهاتف / واتساب</span>
+      </label>
+      <input type="tel" placeholder="+212 6XX XXX XXX">
+    </div>
+    <div class="form-group">
+      <label>
+        <span data-lang="en" class="inline">Business Type</span>
+        <span data-lang="fr" class="inline">Type d'activité</span>
+        <span data-lang="ar" class="inline">نوع النشاط التجاري</span>
+      </label>
+      <select>
+        <option value="" disabled selected>
+        </option>
+        <option>
+          <span data-lang="en" class="inline">Restaurant / Delivery</span>
+          <span data-lang="fr" class="inline">Restaurant / Livraison</span>
+          <span data-lang="ar" class="inline">مطعم / توصيل</span>
+        </option>
+        <option>Café / Coffee Shop</option>
+        <option>Fast Food / QSR</option>
+        <option>Retail / Fashion</option>
+        <option>Pharmacy / Pharmacie / صيدلية</option>
+        <option>Gym / Wellness / رياضة وصحة</option>
+        <option>Supermarket / Supermarché / سوبرماركت</option>
+        <option>Other / Autre / أخرى</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>
+        <span data-lang="en" class="inline">Tell Us About Your Brand</span>
+        <span data-lang="fr" class="inline">Parlez-nous de votre marque</span>
+        <span data-lang="ar" class="inline">أخبرنا عن علامتك التجارية</span>
+      </label>
+      <textarea>
+      </textarea>
+    </div>
+    <button class="form-submit" id="submitBtn" onclick="handleSubmit(this)">
+      <span data-lang="en" class="inline">Request a Free Proposal →</span>
+      <span data-lang="fr" class="inline">Demander une proposition gratuite →</span>
+      <span data-lang="ar" class="inline">اطلب عرضاً مجانياً ←</span>
+    </button>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-logo">Fusion<span> Morocco</span></div>
+  <p>
+    <span data-lang="en" class="inline">©️ 2026 Fusion Morocco · Loyalty Programs for Morocco's Best Brands</span>
+    <span data-lang="fr" class="inline">©️ 2026 Fusion Morocco · Programmes de fidélité pour les meilleures marques du Maroc</span>
+    <span data-lang="ar" class="inline">©️ 2026 فيوجن موروكو · برامج الولاء لأفضل العلامات المغربية</span>
+  </p>
+  <p>Rabat, Morocco</p>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+
+  function handleSubmit(btn) {
+    const lang = document.documentElement.lang;
+    const msgs = {
+      en: "✓ Message Sent — We'll Be in Touch",
+      fr: "✓ Message envoyé — Nous vous contacterons",
+      ar: "✓ تم الإرسال — سنتواصل معك قريباً"
+    };
+    btn.textContent = msgs[lang] || msgs.en;
+    btn.style.background = '#3a7d44';
+    btn.style.color = '#fff';
+  }
+</script>
+
+</body>
+</html>
+```
