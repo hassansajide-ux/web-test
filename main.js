@@ -1,15 +1,13 @@
 function setLang(lang, btn) {
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-  document.querySelectorAll('.lang-btn').forEach(function (b) {
-    b.classList.remove('active');
-  });
+  document.querySelectorAll('.lang-btn').forEach((b) => b.classList.remove('active'));
   if (btn) btn.classList.add('active');
 }
 
 function handleSubmit(btn) {
-  var lang = document.documentElement.lang;
-  var msgs = {
+  const lang = document.documentElement.lang;
+  const msgs = {
     en: "✓ Message Sent — We'll Be in Touch",
     fr: "✓ Message envoyé — Nous vous contacterons",
     ar: "✓ تم الإرسال — سنتواصل معك قريباً"
